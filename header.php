@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Primary Meta Tags -->
-    <title>TECHNOUSKUDAR | Üsküdar Üniversitesi Teknoloji Kulübü</title>
+    
     <meta name="title" content="TECHNOUSKUDAR | Üsküdar Üniversitesi Teknoloji Kulübü">
     <meta name="description" content="Üsküdar Üniversitesi Mühendislik fakültesinde faaliyetlerini yürüten araştırmacı, teknolojik, üretken, genç mühendisler olarak tüm fakültelerden bireyleri içinde barındıran Üsküdar Üniversitesi Teknoloji Kulübüyüz.">
 
@@ -41,8 +41,7 @@
     <meta name="msapplication-TileColor" content="#ffffff">
     <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
     <meta name="theme-color" content="#ffffff">
-
-    <title>TECHNOUSKUDAR | Üsküdar Üniversitesi Teknoloji Kulübü</title>
+    <title><?php bloginfo('name'); echo " | "; bloginfo('description'); ?></title>
 
     <?php 
         wp_head();

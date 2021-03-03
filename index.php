@@ -33,14 +33,14 @@
                 </nav>
     
                 <div class="menu__social">
-                    <a href="https://twitter.com/technouskudar" target="_blank" class="header__social">
-                        <img src="<?php echo bloginfo('template_url'); ?>/assets/icons/twitter.png" alt="twitter" class="header__img">
+                    <a href="<?php the_field('social_twitter', 2) ?>" target="_blank" class="header__social">
+                        <img src="<?php echo bloginfo('template_url'); ?>/assets/icons/twitter.svg" alt="twitter" class="header__img">
                     </a>
-                    <a href="https://www.instagram.com/technouskudar/" target="_blank" class="header__social">
-                        <img src="<?php echo bloginfo('template_url'); ?>/assets/icons/instagram.png" alt="instagram" class="header__img">
+                    <a href="<?php the_field('social_instagram', 2) ?>" target="_blank" class="header__social">
+                        <img src="<?php echo bloginfo('template_url'); ?>/assets/icons/instagram.svg" alt="instagram" class="header__img">
                     </a>
-                    <a href="https://www.youtube.com/channel/UChbV8hHG1ByoyOxS3UVdE-A" target="_blank" class="header__social">
-                        <img src="<?php echo bloginfo('template_url'); ?>/assets/icons/youtube.png" alt="youtube" class="header__img">
+                    <a href="<?php the_field('social_youtube', 2) ?>" target="_blank" class="header__social">
+                        <img src="<?php echo bloginfo('template_url'); ?>/assets/icons/youtube.svg" alt="youtube" class="header__img">
                     </a>
                     
                 </div>
@@ -59,7 +59,7 @@
                 <img src="<?php echo bloginfo('template_url'); ?>/assets/icons/turkey.png" alt="türkçe">
             </a>
             <a href="#" class="languages__item">
-                <img src="<?php echo bloginfo('template_url'); ?>/assets/icons/en.png" alt="türkçe">
+                <img src="<?php echo bloginfo('template_url'); ?>/assets/icons/en.png" alt="english">
             </a>
         </div>
         <div class="container">
@@ -75,29 +75,39 @@
                     <li class="header__link"><a href="#">İletişim</a></li>
                 </ul>
                 <div class="header__wrapper">
-                    <a href="https://twitter.com/technouskudar" target="_blank" class="header__social">
-                        <img src="<?php echo bloginfo('template_url'); ?>/assets/icons/twitter.png" alt="twitter" class="header__img">
+                    <a href="<?php the_field('social_twitter', 2) ?>" target="_blank" class="header__social">
+                        <img src="<?php echo bloginfo('template_url'); ?>/assets/icons/twitter.svg" alt="twitter" class="header__img">
                     </a>
-                    <a href="https://www.instagram.com/technouskudar/" target="_blank" class="header__social">
-                        <img src="<?php echo bloginfo('template_url'); ?>/assets/icons/instagram.png" alt="instagram" class="header__img">
+                    <a href="<?php the_field('social_instagram', 2) ?>" target="_blank" class="header__social">
+                        <img src="<?php echo bloginfo('template_url'); ?>/assets/icons/instagram.svg" alt="instagram" class="header__img">
                     </a>
-                    <a href="https://www.youtube.com/channel/UChbV8hHG1ByoyOxS3UVdE-A" target="_blank" class="header__social">
-                        <img src="<?php echo bloginfo('template_url'); ?>/assets/icons/youtube.png" alt="youtube" class="header__img">
+                    <a href="<?php the_field('social_youtube', 2) ?>" target="_blank" class="header__social">
+                        <img src="<?php echo bloginfo('template_url'); ?>/assets/icons/youtube.svg" alt="youtube" class="header__img">
                     </a>
                 </div>
             </header>
 
             <div class="promo__logo">
-                <img src="<?php echo bloginfo('template_url'); ?>/assets/icons/logo.png" alt="logo">
+                <?php $logo_img = '';
+                if( $custom_logo_id = get_theme_mod('custom_logo') ){
+                    $logo_img = wp_get_attachment_image( $custom_logo_id, 'full', false, array(
+                        'class'    => 'custom-logo',
+                        'itemprop' => 'logo',
+                    ) );
+                }
+
+                echo $logo_img; ?>
             </div>
 
-            <h2 class="subtitle promo__subtitle">Üsküdar üniversitesi</h2>
-            <h1 class="title promo__title">TEKNOLOJİ KULÜBÜ</h1>
+            <h2 class="subtitle promo__subtitle"><?php the_field('promo_subtitle'); ?></h2>
+            <h1 class="title promo__title"><?php the_field('promo_title'); ?></h1>
 
             <div class="promo__descr">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi quis magnam hic sapiente sed qui reiciendis dignissimos suscipit rem quisquam corporis non, pariatur et recusandae Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sequi magni ea accusamus nesciunt possimus temporibus tenetur labore, optio ipsa officiis ducimus architecto cupiditate! Quisquam tempore voluptates repellendus blanditiis, fuga deleniti.
+                <?php the_field('promo_descr'); ?>
             </div>
-            <button class="btn promo__btn">EKİBİMİZE KATIL</button>
+            <a class="btn promo__btn" style="width: 150px; text-decoration: none;" target="_blank" href="<?php the_field('promo_btn-link') ?>">
+                <?php the_field('promo_btn-text'); ?>
+            </a>
             <img src="<?php echo bloginfo('template_url'); ?>/assets/icons/users.png" alt="users" class="promo__user">
             <div class="promo__count">200</div>
             <div class="promo__text">üye sayısı</div>
@@ -106,7 +116,7 @@
 
     <div class="main">
         <div class="container">
-            <div data-url="N2K-BYmc88Y" class="main__link play">
+            <div data-url="<?php the_field('youtube_id'); ?>" class="main__link play">
                 <img src="<?php echo bloginfo('template_url'); ?>/assets/icons/play.png" alt="play" class="main__img">
             </div>
         </div>
@@ -114,93 +124,94 @@
 
     <section id="announcements" class="announcements content">
         <div class="container">
-            <h2 class="title content__title">Duyurular</h2>
+            <h2 class="title content__title"><?php the_field('announce_title'); ?></h2>
             <div class="subtitle content__subtitle">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed, quis rerum facere itaque ducimus temporibus nulla dolorem facilis, velit ipsa officia, nihil reprehenderit accusamus? Unde aliquid dolore minima ullam modi!
+                <?php the_field('announce_descr'); ?>
             </div>
             <div class="content__wrapper">
-                <div class="content__item"">
-                    <a href="#" class="content__item-img">
-                        <img src="<?php echo bloginfo('template_url'); ?>/assets/img/news.jpg" alt="news">
-                    </a>
-                    <div class="content__item-descr">
-                        <div class="subtitle content__item-subtitle">Örnek Duyuru 1</div>
-                        <div class="content__item-text" >
-                            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Unde facilis iure recusandae ex possimus alias accusantium soluta dicta totam excepturi quasi ut, saepe voluptatem natus praesentium ea at fuga perspiciatis.
-                        </div>
-                    </div>
-                </div>
+                <?php 
+                    $posts = get_posts( array(
+                        'numberposts' => -1,
+                        'category_name' => 'announcement_posts',
+                        'orderby'     => 'date',
+                        'order'       => 'ASC',
+                        'post_type'   => 'post',
+                        'suppress_filters' => true,
+                    ) );
+                    foreach( $posts as $post ){
+                        setup_postdata($post);
+                        ?>
+                            <div class="content__item"">
+                                <a href="#" class="content__item-img">
+                                    <img src="<?php 
+                                    if (has_post_thumbnail()) {
+                                        the_post_thumbnail_url();
+                                    } else {
+                                        echo get_template_directory_uri() . '/assets/icons/no-image.png';
+                                    }
+                                    ?>" alt="news">
+                                </a>
+                                <div class="content__item-descr">
+                                    <div class="subtitle content__item-subtitle"><?php the_title(); ?></div>
+                                    <div class="content__item-text" >
+                                        <?php the_field('post_descr'); ?>
+                                    </div>
+                                </div>
+                            </div>
+                        <?php
+                    }
 
-                <div class="content__item"">
-                    <a href="#" class="content__item-img">
-                        <img src="<?php echo bloginfo('template_url'); ?>/assets/img/news.jpg" alt="news">
-                    </a>
-                    <div class="content__item-descr">
-                        <div class="subtitle content__item-subtitle">Örnek Duyuru 2</div>
-                        <div class="content__item-text" >
-                            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Unde facilis iure recusandae ex possimus alias accusantium soluta dicta totam excepturi quasi ut, saepe voluptatem natus praesentium ea at fuga perspiciatis.
-                        </div>
-                    </div>
-                </div>
-
-                <div class="content__item"">
-                    <a href="#" class="content__item-img">
-                        <img src="<?php echo bloginfo('template_url'); ?>/assets/img/news.jpg" alt="news">
-                    </a>
-                    <div class="content__item-descr">
-                        <div class="subtitle content__item-subtitle">Örnek Duyuru 3</div>
-                        <div class="content__item-text" >
-                            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Unde facilis iure recusandae ex possimus alias accusantium soluta dicta totam excepturi quasi ut, saepe voluptatem natus praesentium ea at fuga perspiciatis.
-                        </div>
-                    </div>
-                </div>
+                    wp_reset_postdata();
+                ?>
             </div>
-            <button class="btn content__btn">TÜM DUYURULAR</button>
+            <a href="#" class="btn content__btn">TÜM DUYURULAR</a>
         </div>
     </section>
 
     <section id="articles" class="articles content">
         <div class="container">
-            <h2 class="title content__title">Makaleler</h2>
+            <h2 class="title content__title"><?php the_field('articles_title'); ?></h2>
             <div class="subtitle content__subtitle">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed, quis rerum facere itaque ducimus temporibus nulla dolorem facilis, velit ipsa officia, nihil reprehenderit accusamus? Unde aliquid dolore minima ullam modi!
+                <?php the_field('articles_descr'); ?>
             </div>
             <div class="content__wrapper">
-                <div class="content__item"">
-                    <a href="#" class="content__item-img">
-                        <img src="<?php echo bloginfo('template_url'); ?>/assets/img/news.jpg" alt="news">
-                    </a>
-                    <div class="content__item-descr">
-                        <div class="subtitle content__item-subtitle">Örnek Makale 1</div>
-                        <div class="content__item-text" >
-                            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Unde facilis iure recusandae ex possimus alias accusantium soluta dicta totam excepturi quasi ut, saepe voluptatem natus praesentium ea at fuga perspiciatis.
-                        </div>
-                    </div>
-                </div>
+                <?php 
+                    // параметры по умолчанию
+                    $posts = get_posts( array(
+                        'numberposts' => 3,
+                        'category_name' => 'article_posts',
+                        'orderby'     => 'date',
+                        'order'       => 'ASC',
+                        'post_type'   => 'post',
+                        'suppress_filters' => true, // подавление работы фильтров изменения SQL запроса
+                    ) );
 
-                <div class="content__item"">
-                    <a href="#" class="content__item-img">
-                        <img src="<?php echo bloginfo('template_url'); ?>/assets/img/news.jpg" alt="news">
-                    </a>
-                    <div class="content__item-descr">
-                        <div class="subtitle content__item-subtitle">Örnek Makale 2</div>
-                        <div class="content__item-text" >
-                            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Unde facilis iure recusandae ex possimus alias accusantium soluta dicta totam excepturi quasi ut, saepe voluptatem natus praesentium ea at fuga perspiciatis.
-                        </div>
-                    </div>
-                </div>
+                    foreach( $posts as $post ){
+                        setup_postdata($post);
+                        // формат вывода the_title() ...
+                        ?>
+                            <div class="content__item"">
+                                <a href="#" class="content__item-img">
+                                    <img src="<?php 
+                                        if (has_post_thumbnail()) {
+                                            the_post_thumbnail_url();
+                                        } else {
+                                            echo get_template_directory_uri() . '/assets/icons/no-image.png';
+                                        }
+                                    ?>" alt="news">
+                                </a>
+                                <div class="content__item-descr">
+                                    <div class="subtitle content__item-subtitle"><?php the_title(); ?></div>
+                                    <div class="content__item-text" >
+                                        <?php the_field('post_descr'); ?>
+                                    </div>
+                                </div>
+                            </div>
+                        <?php
+                    }
 
-                <div class="content__item"">
-                    <a href="#" class="content__item-img">
-                        <img src="<?php echo bloginfo('template_url'); ?>/assets/img/news.jpg" alt="news">
-                    </a>
-                    <div class="content__item-descr">
-                        <div class="subtitle content__item-subtitle">Örnek Makale 3</div>
-                        <div class="content__item-text" >
-                            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Unde facilis iure recusandae ex possimus alias accusantium soluta dicta totam excepturi quasi ut, saepe voluptatem natus praesentium ea at fuga perspiciatis.
-                        </div>
-                    </div>
-                </div>
+                    wp_reset_postdata(); // сброс
+                ?>
             </div>
             <button class="btn content__btn">TÜM Makaleler</button>
         </div>
@@ -208,46 +219,47 @@
 
     <section id="events" class="events content">
         <div class="container">
-            <h2 class="title content__title">Etkinlikler</h2>
+            <h2 class="title content__title"><?php the_field('events_title'); ?></h2>
             <div class="subtitle content__subtitle">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed, quis rerum facere itaque ducimus temporibus nulla dolorem facilis, velit ipsa officia, nihil reprehenderit accusamus? Unde aliquid dolore minima ullam modi!
+                <?php the_field('events_descr'); ?>
             </div>
             <div class="content__wrapper">
-                <div class="content__item"">
-                    <a href="#" class="content__item-img">
-                        <img src="<?php echo bloginfo('template_url'); ?>/assets/img/news.jpg" alt="news">
-                    </a>
-                    <div class="content__item-descr">
-                        <div class="subtitle content__item-subtitle">Örnek Etkinlik 1</div>
-                        <div class="content__item-text" >
-                            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Unde facilis iure recusandae ex possimus alias accusantium soluta dicta totam excepturi quasi ut, saepe voluptatem natus praesentium ea at fuga perspiciatis.
-                        </div>
-                    </div>
-                </div>
+            <?php 
+                    // параметры по умолчанию
+                    $posts = get_posts( array(
+                        'numberposts' => 3,
+                        'category_name' => 'event_posts',
+                        'orderby'     => 'date',
+                        'order'       => 'ASC',
+                        'post_type'   => 'post',
+                        'suppress_filters' => true,
+                    ) );
 
-                <div class="content__item"">
-                    <a href="#" class="content__item-img">
-                        <img src="<?php echo bloginfo('template_url'); ?>/assets/img/news.jpg" alt="news">
-                    </a>
-                    <div class="content__item-descr">
-                        <div class="subtitle content__item-subtitle">Örnek Etkinlik 2</div>
-                        <div class="content__item-text" >
-                            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Unde facilis iure recusandae ex possimus alias accusantium soluta dicta totam excepturi quasi ut, saepe voluptatem natus praesentium ea at fuga perspiciatis.
-                        </div>
-                    </div>
-                </div>
+                    foreach( $posts as $post ){
+                        setup_postdata($post);
+                        ?>
+                            <div class="content__item"">
+                                <a href="#" class="content__item-img">
+                                    <img src="<?php 
+                                        if (has_post_thumbnail()) {
+                                            the_post_thumbnail_url();
+                                        } else {
+                                            echo get_template_directory_uri() . '/assets/icons/no-image.png';
+                                        }
+                                    ?>" alt="news">
+                                </a>
+                                <div class="content__item-descr">
+                                    <div class="subtitle content__item-subtitle"><?php the_title(); ?></div>
+                                    <div class="content__item-text" >
+                                        <?php the_field('post_descr'); ?>
+                                    </div>
+                                </div>
+                            </div>
+                        <?php
+                    }
 
-                <div class="content__item"">
-                    <a href="#" class="content__item-img">
-                        <img src="<?php echo bloginfo('template_url'); ?>/assets/img/news.jpg" alt="news">
-                    </a>
-                    <div class="content__item-descr">
-                        <div class="subtitle content__item-subtitle">Örnek Etkinlik 3</div>
-                        <div class="content__item-text" >
-                            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Unde facilis iure recusandae ex possimus alias accusantium soluta dicta totam excepturi quasi ut, saepe voluptatem natus praesentium ea at fuga perspiciatis.
-                        </div>
-                    </div>
-                </div>
+                    wp_reset_postdata(); // сброс
+                ?>
             </div>
             <button class="btn content__btn">TÜM Etkinlikler</button>
         </div>

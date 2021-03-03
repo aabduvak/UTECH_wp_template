@@ -1,0 +1,8 @@
+.btn.content__btn, .btn.promo__btn {
+    width: 180px;
+    text-align: center; 
+    text-decoration: none;
+}
+.content__item-img {
+    height: auto;
+}

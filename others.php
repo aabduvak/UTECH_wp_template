@@ -1,52 +1,6 @@
-<!DOCTYPE html>
-<html lang="tr">
-<head>
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <!-- Primary Meta Tags -->
-        <meta name="title" content="TECHNOUSKUDAR | Üsküdar Üniversitesi Teknoloji Kulübü">
-        <meta name="description" content="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos fuga voluptate, ipsam totam natus quo sit aut, amet minus odit eaque delectus reiciendis eveniet. Ipsam qui aperiam maxime sint ut.">
-    
-        <!-- Open Graph / Facebook -->
-        <meta property="og:type" content="website">
-        <meta property="og:url" content="https://technouskudar.com/">
-        <meta property="og:title" content="TECHNOUSKUDAR | Üsküdar Üniversitesi Teknoloji Kulübü">
-        <meta property="og:description" content="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos fuga voluptate, ipsam totam natus quo sit aut, amet minus odit eaque delectus reiciendis eveniet. Ipsam qui aperiam maxime sint ut.">
-        <meta property="og:image" content="">
-    
-        <!-- Twitter -->
-        <meta property="twitter:card" content="summary_large_image">
-        <meta property="twitter:url" content="https://technouskudar.com/">
-        <meta property="twitter:title" content="TECHNOUSKUDAR | Üsküdar Üniversitesi Teknoloji Kulübü">
-        <meta property="twitter:description" content="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos fuga voluptate, ipsam totam natus quo sit aut, amet minus odit eaque delectus reiciendis eveniet. Ipsam qui aperiam maxime sint ut.">
-        <meta property="twitter:image" content="">
-    
-        <!-- Favicon -->
-        <link rel="apple-touch-icon" sizes="57x57" href="assets/icons/favicon/apple-icon-57x57.png">
-        <link rel="apple-touch-icon" sizes="60x60" href="assets/icons/favicon/apple-icon-60x60.png">
-        <link rel="apple-touch-icon" sizes="72x72" href="assets/icons/favicon/apple-icon-72x72.png">
-        <link rel="apple-touch-icon" sizes="76x76" href="assets/icons/favicon/apple-icon-76x76.png">
-        <link rel="apple-touch-icon" sizes="114x114" href="assets/icons/favicon/apple-icon-114x114.png">
-        <link rel="apple-touch-icon" sizes="120x120" href="assets/icons/favicon/apple-icon-120x120.png">
-        <link rel="apple-touch-icon" sizes="144x144" href="assets/icons/favicon/apple-icon-144x144.png">
-        <link rel="apple-touch-icon" sizes="152x152" href="assets/icons/favicon/apple-icon-152x152.png">
-        <link rel="apple-touch-icon" sizes="180x180" href="assets/icons/favicon/apple-icon-180x180.png">
-        <link rel="icon" type="image/png" sizes="192x192"  href="assets/icons/favicon/android-icon-192x192.png">
-        <link rel="icon" type="image/png" sizes="32x32" href="assets/icons/favicon/favicon-32x32.png">
-        <link rel="icon" type="image/png" sizes="96x96" href="assets/icons/favicon/favicon-96x96.png">
-        <link rel="icon" type="image/png" sizes="16x16" href="assets/icons/favicon/favicon-16x16.png">
-        <link rel="manifest" href="assets/icons/favicon/manifest.json">
-        <meta name="msapplication-TileColor" content="#ffffff">
-        <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
-        <meta name="theme-color" content="#ffffff">
-    
-        <title>TECHNOUSKUDAR | Üsküdar Üniversitesi Teknoloji Kulübü</title>
-    
-        <link rel="stylesheet" href="assets/css/style.min.css">
-    </head>
-</head>
+<?php 
+    get_header()
+?>
 <body>
     <header class="other-header">
         <div class="menu">
@@ -80,13 +34,13 @@
     
                 <div class="menu__social">
                     <a href="https://twitter.com/technouskudar" target="_blank" class="header__social">
-                        <img src="assets/icons/twitter.png" alt="twitter" class="header__img">
+                        <img src="assets/icons/twitter.svg" alt="twitter" class="header__img">
                     </a>
                     <a href="https://www.instagram.com/technouskudar/" target="_blank" class="header__social">
-                        <img src="assets/icons/instagram.png" alt="instagram" class="header__img">
+                        <img src="assets/icons/instagram.svg" alt="instagram" class="header__img">
                     </a>
                     <a href="https://www.youtube.com/channel/UChbV8hHG1ByoyOxS3UVdE-A" target="_blank" class="header__social">
-                        <img src="assets/icons/youtube.png" alt="youtube" class="header__img">
+                        <img src="assets/icons/youtube.svg" alt="youtube" class="header__img">
                     </a>
                     
                 </div>
@@ -111,9 +65,9 @@
 
         <div class="container">
             <nav class="other-header__content">
-                <a href="#" class="other-header__logo">
-                    <img src="assets/icons/logo.png" alt="logo">
-                </a>
+                <div class="other-header__logo">
+                    <?php the_custom_logo( ); ?>
+                </div>
                 <div class="title other-header__title">
                     <span>Üsküdar Üniversitesi</span><br>
                     TEKNOLOJI KULÜBÜ
@@ -132,14 +86,14 @@
                     <li class="other-header__link"><a href="#">İletişim</a></li>
                 </ul>
                 <div class="other-header__wrapper">
-                    <a href="https://twitter.com/technouskudar" target="_blank" class="other-header__social">
-                        <img src="assets/icons/twitter.png" alt="twitter" class="other-header__img">
+                    <a href="https://twitter.com/technouskudar" target="_blank" class="other-header__img">
+                        <img src="assets/icons/twitter.svg" alt="twitter" class="other-header__img">
                     </a>
                     <a href="https://www.instagram.com/technouskudar/" target="_blank" class="other-header__social">
-                        <img src="assets/icons/instagram.png" alt="instagram" class="other-header__img">
+                        <img src="assets/icons/instagram.svg" alt="instagram" class="other-header__img">
                     </a>
                     <a href="https://www.youtube.com/channel/UChbV8hHG1ByoyOxS3UVdE-A" target="_blank" class="other-header__social">
-                        <img src="assets/icons/youtube.png" alt="youtube" class="other-header__img">
+                        <img src="assets/icons/youtube.svg" alt="youtube" class="other-header__img">
                     </a>
                 </div>
             </nav>

@@ -1,14 +1,15 @@
 <footer class="footer">
-        <ul class="footer__menu">
-            <li class="footer__link"><a href="#">Ana Sayfa</a></li>
-            <li class="footer__link"><a href="#">Hakkımızda</a></li>
-            <li class="footer__link"><a href="#">Ekibimiz</a></li>
-            <li class="footer__link"><a href="#">Duyurular</a></li>
-            <li class="footer__link"><a href="#">Makaleler</a></li>
-            <li class="footer__link"><a href="#">Etkinlikler</a></li>
-            <li class="footer__link"><a href="#">Techbilgi Köşesi</a></li>
-            <li class="footer__link"><a href="#">İletişim</a></li>
-        </ul>
+        <?php
+            wp_nav_menu( [
+                'menu'            => 'Footer', 
+                'container'       => false,
+                'menu_class'      => 'footer__menu',
+                'echo'            => true,
+                'fallback_cb'     => 'wp_page_menu',
+                'items_wrap'      => '<ul class="footer__menu">%3$s</ul>',
+                'depth'           => 1
+            ] );
+        ?>
         <div class="container">
             <div class="footer__logo">
                 <?php $logo_img = '';
@@ -21,9 +22,9 @@
 
                 echo $logo_img; ?>
             </div>
-            <div class="title footer__title"><?php the_field('footer_title'); ?></div>
+            <div class="title footer__title"><?php the_field('footer_title', 2); ?></div>
             <div class="footer__descr">
-                <?php the_field('footer_descr'); ?>
+                <?php the_field('footer_descr', 2); ?>
             </div>
             <div class="footer__wrapper">
                 <a href="<?php the_field('social_twitter', 2) ?>" target="_blank" class="footer__social">

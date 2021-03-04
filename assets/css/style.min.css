@@ -3,6 +3,30 @@
     text-align: center; 
     text-decoration: none;
 }
-.content__item-img {
+.content__item-img, .page-content__img {
     height: auto;
+}
+.other-header__link_a {
+    transition: all .6s;
+    text-transform: capitalize;
+    margin-right: 32px;
+    text-decoration: none;
+    color: #fff;
+}
+.other-header__menu li {
+    list-style-type: none;
+    font-size: 14px;
+    font-weight: 400;
+}
+.mt-40 {
+    margin-top: 40px;
+}
+.mt-30 {
+    margin-top: 30px;
+}
+figcaption {
+    text-align: center;
+}
+p {
+    line-height: 25px;
 }

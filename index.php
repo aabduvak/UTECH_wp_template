@@ -1,6 +1,52 @@
-<?php 
-    get_header()
-?>
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Primary Meta Tags -->
+    
+    <meta name="title" content="TECHNOUSKUDAR | Üsküdar Üniversitesi Teknoloji Kulübü">
+    <meta name="description" content="Üsküdar Üniversitesi Mühendislik fakültesinde faaliyetlerini yürüten araştırmacı, teknolojik, üretken, genç mühendisler olarak tüm fakültelerden bireyleri içinde barındıran Üsküdar Üniversitesi Teknoloji Kulübüyüz.">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://technouskudar.com/">
+    <meta property="og:title" content="TECHNOUSKUDAR | Üsküdar Üniversitesi Teknoloji Kulübü">
+    <meta property="og:description" content="Üsküdar Üniversitesi Mühendislik fakültesinde faaliyetlerini yürüten araştırmacı, teknolojik, üretken, genç mühendisler olarak tüm fakültelerden bireyleri içinde barındıran Üsküdar Üniversitesi Teknoloji Kulübüyüz.">
+    <meta property="og:image" content="">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://technouskudar.com/">
+    <meta property="twitter:title" content="TECHNOUSKUDAR | Üsküdar Üniversitesi Teknoloji Kulübü">
+    <meta property="twitter:description" content="Üsküdar Üniversitesi Mühendislik fakültesinde faaliyetlerini yürüten araştırmacı, teknolojik, üretken, genç mühendisler olarak tüm fakültelerden bireyleri içinde barındıran Üsküdar Üniversitesi Teknoloji Kulübüyüz.">
+    <meta property="twitter:image" content="">
+
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="57x57" href="<?php echo bloginfo('template_url'); ?>/assets/icons/favicon/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="<?php echo bloginfo('template_url'); ?>/assets/icons/favicon/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="<?php echo bloginfo('template_url'); ?>/assets/icons/favicon/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="<?php echo bloginfo('template_url'); ?>/assets/icons/favicon/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="<?php echo bloginfo('template_url'); ?>/assets/icons/favicon/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="<?php echo bloginfo('template_url'); ?>/assets/icons/favicon/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="<?php echo bloginfo('template_url'); ?>/assets/icons/favicon/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="<?php echo bloginfo('template_url'); ?>/assets/icons/favicon/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="<?php echo bloginfo('template_url'); ?>/assets/icons/favicon/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="<?php echo bloginfo('template_url'); ?>/assets/icons/favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="<?php echo bloginfo('template_url'); ?>/assets/icons/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="<?php echo bloginfo('template_url'); ?>/assets/icons/favicon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="<?php echo bloginfo('template_url'); ?>/assets/icons/favicon/favicon-16x16.png">
+    <link rel="manifest" href="<?php echo bloginfo('template_url'); ?>/assets/icons/favicon/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+    <title><?php bloginfo('name'); echo " | "; bloginfo('description'); ?></title>
+
+    <?php 
+        wp_head();
+    ?>
+</head>
 <body>
     <section class="promo">
         <div class="menu">
@@ -21,15 +67,17 @@
                 </div>
     
                 <nav>
-                    <ul class="menu__list">
-                        <li class="menu__link"><a href="#">Ana Sayfa</a></li>
-                        <li class="menu__link"><a href="#">Hakkımızda</a></li>
-                        <li class="menu__link"><a href="#">Ekibimiz</a></li>
-                        <li class="menu__link"><a href="#">Duyurular</a></li>
-                        <li class="menu__link"><a href="#">Makaleler</a></li>
-                        <li class="menu__link"><a href="#">Techbilgi Köşesi</a></li>
-                        <li class="menu__link"><a href="#">İletişim</a></li>
-                    </ul>
+                    <?php
+                        wp_nav_menu( [
+                            'menu'            => 'Secondary', 
+                            'container'       => false,
+                            'menu_class'      => 'menu__list',
+                            'echo'            => true,
+                            'fallback_cb'     => 'wp_page_menu',
+                            'items_wrap'      => '<ul class="menu__list">%3$s</ul>',
+                            'depth'           => 1
+                        ] );
+                    ?>
                 </nav>
     
                 <div class="menu__social">
@@ -64,16 +112,17 @@
         </div>
         <div class="container">
             <header class="header">
-                <ul class="header__menu">
-                    <li class="header__link"><a href="#">Ana Sayfa</a></li>
-                    <li class="header__link"><a href="#">Hakkımızda</a></li>
-                    <li class="header__link"><a href="#">Ekibimiz</a></li>
-                    <li class="header__link"><a href="#">Duyurular</a></li>
-                    <li class="header__link"><a href="#">Makaleler</a></li>
-                    <li class="header__link"><a href="#">Etkinlikler</a></li>
-                    <li class="header__link"><a href="#">Techbilgi Köşesi</a></li>
-                    <li class="header__link"><a href="#">İletişim</a></li>
-                </ul>
+                <?php
+                    wp_nav_menu( [
+                        'menu'            => 'Homepage', 
+                        'container'       => false,
+                        'menu_class'      => 'header__menu',
+                        'echo'            => true,
+                        'fallback_cb'     => 'wp_page_menu',
+                        'items_wrap'      => '<ul class="header__menu">%3$s</ul>',
+                        'depth'           => 1
+                ] );
+                ?>
                 <div class="header__wrapper">
                     <a href="<?php the_field('social_twitter', 2) ?>" target="_blank" class="header__social">
                         <img src="<?php echo bloginfo('template_url'); ?>/assets/icons/twitter.svg" alt="twitter" class="header__img">
@@ -142,7 +191,7 @@
                         setup_postdata($post);
                         ?>
                             <div class="content__item"">
-                                <a href="#" class="content__item-img">
+                                <a href="<?php echo get_permalink(); ?>" class="content__item-img">
                                     <img src="<?php 
                                     if (has_post_thumbnail()) {
                                         the_post_thumbnail_url();
@@ -164,7 +213,7 @@
                     wp_reset_postdata();
                 ?>
             </div>
-            <a href="#" class="btn content__btn">TÜM DUYURULAR</a>
+            <a href="<?php echo get_category_link(2) ?>" class="btn content__btn">TÜM DUYURULAR</a>
         </div>
     </section>
 
@@ -191,7 +240,7 @@
                         // формат вывода the_title() ...
                         ?>
                             <div class="content__item"">
-                                <a href="#" class="content__item-img">
+                                <a href="<?php echo get_permalink(); ?>" class="content__item-img">
                                     <img src="<?php 
                                         if (has_post_thumbnail()) {
                                             the_post_thumbnail_url();
@@ -213,7 +262,7 @@
                     wp_reset_postdata(); // сброс
                 ?>
             </div>
-            <button class="btn content__btn">TÜM Makaleler</button>
+            <a href="<?php echo get_category_link(3) ?>" class="btn content__btn">TÜM Makaleler</a>
         </div>
     </section>
 
@@ -239,7 +288,7 @@
                         setup_postdata($post);
                         ?>
                             <div class="content__item"">
-                                <a href="#" class="content__item-img">
+                                <a href="<?php echo get_permalink(); ?>" class="content__item-img">
                                     <img src="<?php 
                                         if (has_post_thumbnail()) {
                                             the_post_thumbnail_url();
@@ -261,7 +310,7 @@
                     wp_reset_postdata(); // сброс
                 ?>
             </div>
-            <button class="btn content__btn">TÜM Etkinlikler</button>
+            <a href="<?php echo get_category_link(4) ?>" class="btn content__btn">TÜM Etkinlikler</a>
         </div>
     </section>
 

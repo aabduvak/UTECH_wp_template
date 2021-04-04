@@ -1,6 +1,6 @@
 <?php 
 /* 
-Template Name: Çerez Politikası
+Template Name: Gizlilik Politikası
 */
 ?>
 
@@ -8,9 +8,9 @@ Template Name: Çerez Politikası
     get_header();
 ?>
 
-<section class="page-content cookie site-main">
+<section class="page-content policy site-main">
     <div class="container">
-    <h1 class="title page-content__title mt-30"><?php the_title(); ?></h1>
+    <h1 class="title page-content__title"><?php the_title(); ?></h1>
             <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
                 <div class="entry-content mt-30">
                     <?php

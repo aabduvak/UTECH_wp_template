@@ -1,32 +1,17 @@
-.btn.content__btn, .btn.promo__btn {
-    width: 180px;
-    text-align: center; 
-    text-decoration: none;
-}
-.content__item-img, .page-content__img {
-    height: auto;
-}
-.other-header__link_a {
-    transition: all .6s;
-    text-transform: capitalize;
-    margin-right: 32px;
-    text-decoration: none;
-    color: #fff;
-}
-.other-header__menu li {
-    list-style-type: none;
-    font-size: 14px;
-    font-weight: 400;
-}
-.mt-40 {
-    margin-top: 40px;
-}
-.mt-30 {
-    margin-top: 30px;
-}
-figcaption {
+.wpcf7-not-valid-tip {
+    margin-top: 10px;
     text-align: center;
+    font-family: 'Myriad Pro',sans-serif;
 }
-p {
-    line-height: 25px;
+.wpcf7 form.invalid .wpcf7-response-output {
+    border-color: unset;
+    border: none;
+    text-align: center;
+    font-family: 'Myriad Pro',sans-serif;
+}
+.wpcf7 form.sent .wpcf7-response-output {
+    border-color: unset;
+    border: none;
+    text-align: center;
+    font-family: 'Myriad Pro',sans-serif;
 }

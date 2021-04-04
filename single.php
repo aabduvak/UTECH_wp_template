@@ -13,11 +13,8 @@ get_header();
         </div>
 	</main><!-- #main -->
 
-    <div class="container mt-30">
-        <h2 class="title content__title">Belki beğenirsin</h2>
-        <div class="subtitle content__subtitle">
-            <?php the_field('announce_descr'); ?>
-        </div>
+    <div class="container mt-40">
+        <h2 class="title page-content__title">Belki beğenirsin</h2>
         <div class="content__wrapper">
             <?php 
                 $posts = get_posts( array(

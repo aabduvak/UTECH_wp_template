@@ -56,15 +56,6 @@
                         <path d="M17.1568 14.4999L28.4489 3.20755C29.1837 2.47303 29.1837 1.28541 28.4489 0.550891C27.7144 -0.18363 26.5267 -0.18363 25.7922 0.550891L14.4998 11.8433L3.20781 0.550891C2.47295 -0.18363 1.28567 -0.18363 0.551149 0.550891C-0.183716 1.28541 -0.183716 2.47303 0.551149 3.20755L11.8432 14.4999L0.551149 25.7923C-0.183716 26.5268 -0.183716 27.7144 0.551149 28.449C0.917206 28.8154 1.39852 28.9994 1.87948 28.9994C2.36045 28.9994 2.84141 28.8154 3.20781 28.449L14.4998 17.1566L25.7922 28.449C26.1586 28.8154 26.6396 28.9994 27.1205 28.9994C27.6015 28.9994 28.0825 28.8154 28.4489 28.449C29.1837 27.7144 29.1837 26.5268 28.4489 25.7923L17.1568 14.4999Z" fill="white"/>
                     </svg>
                 </div>
-
-                <div class="menu__lang">
-                    <a href="#" class="menu__lang-item">
-                        <img src="<?php echo bloginfo('template_url'); ?>/assets/icons/turkey.png" alt="türkçe">
-                    </a>
-                    <a href="#" class="menu__lang-item">
-                        <img src="<?php echo bloginfo('template_url'); ?>/assets/icons/en.png" alt="english">
-                    </a>
-                </div>
     
                 <nav>
                     <?php
@@ -100,15 +91,6 @@
         <span class="long"></span>
         <span></span>
     </div>
-    
-    <div class="languages">
-        <a href="#" class="languages__item">
-            <img src="<?php echo bloginfo('template_url'); ?>/assets/icons/turkey.png" alt="türkçe">
-        </a>
-        <a href="#" class="languages__item">
-            <img src="<?php echo bloginfo('template_url'); ?>/assets/icons/en.png" alt="türkçe">
-        </a>
-    </div>
 
     <div class="container">
         <nav class="other-header__content">
@@ -143,6 +125,7 @@
                 <a href="<?php the_field('social_youtube', 2) ?>" target="_blank" class="other-header__social">
                     <img src="<?php echo bloginfo('template_url'); ?>/assets/icons/youtube.svg" alt="youtube" class="other-header__img">
                 </a>
+                
             </div>
         </nav>
     </div>

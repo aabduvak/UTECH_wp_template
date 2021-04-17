@@ -28,7 +28,7 @@ get_header();
                     'numberposts' => 3,
                     'category_name' => 'event_posts',
                     'orderby'     => 'date',
-                    'order'       => 'ASC',
+                    'order'       => 'DESC',
                     'post_type'   => 'post',
                     'suppress_filters' => true,
                 ) );
@@ -61,3 +61,4 @@ get_header();
     </div>          
 <?php
 get_footer();
+?>

@@ -5,21 +5,19 @@
 <?php
 get_header();
 ?>
-    <div class="container mt-30">
-        <h2 class="title content__title">"Techbilgi Köşesi" kategorisinden postlar</h2>
+    <section class="container mt-30">
+        <h1 class="title content__title">"Techbilgi" kategorisinden postlar</h1>
         <div class="content__wrapper">
             <?php 
-                $posts = get_posts( array(
-                    'numberposts' => -1,
-                    'category_name' => 'tech_knowledge',
-                    'orderby'     => 'date',
-                    'order'       => 'ASC',
-                    'post_type'   => 'post',
-                    'suppress_filters' => true,
-                ) );
-                foreach( $posts as $post ){
-                    setup_postdata($post);
-                    ?>
+                $paged = get_query_var( 'paged' ) ? get_query_var( 'paged' ) : 1; // setup pagination
+                $posts= new WP_Query(array(
+                    'post_type'=> 'post',
+                    'posts_per_page' => 9,
+                    'paged' => $paged,
+                    'category_name' => 'tech_posts',
+                ));
+                if($posts->have_posts()) : 
+                    while($posts->have_posts())  : $posts->the_post(); ?>
                         <div class="content__item"">
                             <a href="<?php echo get_permalink(); ?>" class="content__item-img">
                                 <img src="<?php 
@@ -37,12 +35,30 @@ get_header();
                                 </div>
                             </div>
                         </div>
+                
+                <?php   endwhile; ?>
+                </div>
+                <div class="mt-30">
                     <?php
-                }
-                wp_reset_postdata();
-            ?>
+                        $GLOBALS['wp_query'] = $posts; 
+
+                        the_posts_pagination(
+                            array(
+                                'mid_size' => '2',
+                                'prev_text' => '<i class="fa fa-hand-o-left"></i> <<',
+                                'next_text' => '>> <i class="fa fa-hand-o-right"></i>',
+                                'screen_reader_text' => ' '
+                            )
+                        );
+                    ?>
+                </div>
+
+                <?php else :?>
+                    <h3><?php _e('404 Error&#58; Not Found', 'Bangladesh Parjatan'); ?></h3>
+                <?php endif; ?>
+                <?php wp_reset_postdata();?>            
         </div>
-    </div>          
+    </section>            
 <?php
 get_footer();
 ?>

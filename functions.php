@@ -38,5 +38,40 @@
 
         return $classes;
     }
+    
+    add_action( 'do_robotstxt', 'my_robotstxt' );
+    
+    function my_robotstxt(){
+    
+    	$lines = [
+    		'User-agent: *                  # Robotlar için bir kurallar bölümü oluşturuyoruz. * herkes anlamına geliyor',
+    		'Disallow: /wp-admin/           # Yönetici paneli',
+    		'Allow:    /wp-admin/admin-ajax.php',
+    		'',
+    		'Disallow: /cgi-bin             # Hostingda standart klasör',
+    		'Disallow: /?                   # Ana sayfadaki tüm arama parametreleri',
+            'Disallow: *?s=                 # Arama',
+            'Disallow: *&s=                 # Arama',
+            'Disallow: /search              # Arama',
+            'Disallow: /author/             # Yazarın arşivi',
+            'Disallow: */embed              # Tüm gömmeler',
+            'Disallow: */page/              # Her tür sayfalandırma',
+            'Disallow: */xmlrpc.php         # WordPress API dosyası',
+            'Disallow: *utm*=               # Utm etiketleriyle bağlantılar',
+            'Disallow: *openstat=           # Openstat etiketli bağlantılar',
+            '',
+            '',
+            '# Bir veya daha fazla site haritası (Sitemap dosyası)',
+            'Sitemap: https://technouskudar.com/sitemap_index.xml',
+    	];
+    
+    	echo implode( "\r\n", $lines );
+    
+    	die; // PHP'yi sonlandırıyoruz
+    }
+    
+    
+							       
 
+    
 ?>
